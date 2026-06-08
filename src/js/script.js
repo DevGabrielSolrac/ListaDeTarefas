@@ -11,9 +11,16 @@ btnAdd.addEventListener("click", () => {
     if(campoText.trim() != ""){
         
         addItemList.textContent = campoText + " ";// Define o texto da tarefa dentro do <li>.
+        removeList.textContent = "Excluir";// Define o texto que aparecerá no botão.
 
-        listTarefas.appendChild(addItemList);   // Aqui irá add um item na lista.
+        listTarefas.appendChild(addItemList);// Aqui irá add um item na lista.
+        addItemList.appendChild(removeList);    // Adiciona o botão dentro do <li>.
 
-        cmpTextTarefas.value = "";      //Aqui irá apagar o que foi escrito.
+        cmpTextTarefas.value = "";//Aqui irá apagar o que foi escrito.
+
+        //Ação do botão remover.
+        removeList.addEventListener("click", () => {
+            addItemList.remove();
+        });
     }
 });
