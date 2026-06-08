@@ -2,7 +2,20 @@ const cmpTextTarefas = document.getElementById("tarefas");
 const btnAdd = document.getElementById("adicionar");
 const listTarefas = document.getElementById("list");
 
+//Ao clicar
 btnAdd.addEventListener("click", () => {
+    functionsTarefas();    
+});
+
+//Suporte ao teclado
+cmpTextTarefas.addEventListener("keydown",(event) => {
+    if(event.key == "Enter"){
+        functionsTarefas();
+    }
+});
+
+
+function functionsTarefas(){
     const campoText = cmpTextTarefas.value; //Pegando o texto digitado
     const addItemList = document.createElement("li"); //Criando o elemento <li>.
     const removeList = document.createElement("button"); //Criando o elemento botão para remover item da lista.
@@ -40,4 +53,5 @@ btnAdd.addEventListener("click", () => {
             }
         })
     }
-});
+}
+
